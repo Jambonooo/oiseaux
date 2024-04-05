@@ -34,7 +34,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[43.903867343057016,4.872942947636631],[43.91388874205443,4.888276228947037]]);
+        }).fitBounds([[43.907851248483226,4.881628512921731],[43.91035669731278,4.885461970602679]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -177,7 +177,8 @@
         function pop_points_ecoute_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Num_point'] !== null ? autolinker.link(feature.properties['Num_point'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Num_point</th>\
+                        <td>' + (feature.properties['Num_point'] !== null ? autolinker.link(feature.properties['Num_point'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
